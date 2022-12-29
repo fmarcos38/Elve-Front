@@ -4,6 +4,20 @@
     align-items: center;
     color: aqua;
 }
-.titulo{
+.cont1{
+    float: left;
+}
+.chino{
+    width: 300px;
+    height: 500px;
+}
 
+@media screen and (max-width:480px){
+    .titulo{
+        font-size: 15px;
+    }
+    .gifs{
+        width: 80%;
+        
+    }
 }
