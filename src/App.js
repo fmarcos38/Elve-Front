@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Registrarse from './components/Registrarse';
 import RespValidaCuenta from './components/RespValidaCuenta';
 import FormCreateProd from './components/FormCreateProd';
+import CardProd from './components/CardProd';
 import ListaProducts from './components/ListaProducts';
 import Oferta from './components/Ofertas';
 import Favorites from './components/favorites/inde';
@@ -18,7 +19,10 @@ import Succes from './components/RespuestaCompra/Succes';
 import UserOrdersDetail from './components/UserProfile/UserOrdersDetails';
 import ListaVentas from './components/ListaVentas';
 import DetalleCompra from './components/DetalleCompra';
-
+import UserProfile from './components/UserProfile/UserProfile';
+import UserOrdersApproved from './components/UserProfile/UserOrdersApproved';
+import UserAddress from './components/UserProfile/UserAddress';
+import ListaClientes from './components/ListaClientes';
 
 function App() {
   return (
@@ -47,8 +51,16 @@ function App() {
         <Route path='/user/compra/detalle/:id' element={<UserOrdersDetail/>}/>
         <Route path='/listaVentas' element={<ListaVentas/>}/>
         <Route path='/compraDetalle/:_id' element={<DetalleCompra/>}/>
-      </Routes>
-      
+        {/* rutas user */}
+        <Route path='/userProfile' element={<UserProfile/>}/>
+        <Route path="/userorders/approved" element={<UserOrdersApproved/>}/>
+        <Route path='/useraddress' element={<UserAddress/>}/>
+        <Route path='/listaClientes' element={<ListaClientes/>}/>       
+
+
+        {/* rutas de prueba p/desarrollador*/}        
+        <Route path='/cardProd' element={<CardProd/>}/>
+      </Routes>      
       
     </div>
   );
