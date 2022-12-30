@@ -1,0 +1,96 @@
+.containerGralCarrito{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 4em 0 15.9em 0;
+    padding: 0;    
+}
+.msjCartVacio{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-Direction: column; 
+    color:aqua;
+    width: 60%;
+}
+.free{
+    display: flex;
+    flex-direction: column;
+}
+.number{
+    font-size: large;
+    padding-bottom: 5%;
+}
+.buttom{
+	color: red;
+    border: 2px solid 	#4d0101 ;
+    /* background-color: #4d0101; */
+    border-radius: 2rem;
+    /* padding: auto; */
+}
+.buttom:hover{
+    background-color: rgba(255, 0, 0, 0.788);
+    color:#4d0101;
+}
+.carrito{
+    padding-top: 7.01%;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.tableC{
+    border: 1px solid #eaeaea;
+    text-align: center;
+    width: 50%;
+    border-collapse:collapse;
+    margin: 0 auto 2em auto;
+}
+
+.tableC .encabC{
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #f5f5f5;
+}
+
+.tableC .encabC td{
+    padding: 0.2em 2em;
+}
+
+.tableC .tableBodyCarrito tr td{
+    padding: 1em 0 0 0;
+    border-bottom: 1px solid #eaeaea;
+    font-weight: 300;
+    width: 100px;
+    color: #f5f5f5;
+}
+.resumenTot{
+    color: #f5f5f5;
+}
+@media screen and (max-width: 800px){
+    .container{
+        flex-direction: column;  
+    }
+    .tableC{
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+    }
+    .tableC .encabC td{
+        padding: 0.2em .47em;
+        font-size: 13px;
+    }
+    .tableC .tableBodyCarrito tr td{
+        font-size: 13px;
+    }
+    .imagenTablaVenta{
+        display: none;
+    }
+    .btnElimTabla{
+        size: 14px;
+    }
+
+    .resumenTot{
+        margin-left: 15px;
+    }
+
+}

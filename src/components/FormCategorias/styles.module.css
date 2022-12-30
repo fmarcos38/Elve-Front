@@ -1,0 +1,113 @@
+.bodyCreateProperty{
+    height: auto;/* abarca todo el alto de la pantalla */
+    width: 100%;
+    background: #FF416C;  
+    background: -webkit-linear-gradient(to right, #FF416C 0%, #ff765e 100%) no-repeat center center fixed; 
+    background: linear-gradient(0deg, #FF416C 0%, #ff765e 100%) no-repeat center center fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formCat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    height: 25%;
+    width: 65%;  
+    background-color: rgb(164, 218, 229);
+    background-size: cover;
+}
+.inpNameCat{
+    width: 70%;
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+.errorInput{
+    width: 30%;
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border-color: red;
+    border: 3px solid none;    
+}
+.errorSpan{    
+    color: red;
+}
+.listaCat{
+    background-color: rgb(164, 218, 229);
+    height: auto;
+    width: 65%;
+    
+}
+.table{
+    border: 1px solid #eaeaea;
+    text-align: center;
+    width: 50%;
+    border-collapse:collapse;
+    margin: 0 auto 2em auto;
+}
+.table .tableHead{
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #f5f5f5;
+}
+.table .tableHead td{
+    padding: 0.2em 2em;
+}
+.table .tableBody tr td{
+    padding: 1em 0 0 0;
+    border-bottom: 1px solid #eaeaea;
+    font-weight: 300;
+    width: 100px;
+}
+.itemTable{ 
+    width: "40px" ;
+    color: black;
+    font-size: 16px;
+}
+@media screen and (max-width:480px){
+    .bodyCreateProperty{
+        height: auto;        
+    }
+    .formCat{
+        height: 175px;
+    }
+    .inpNameCat{
+        width: 90%;
+        height: 30px;
+        margin-top: 5px;
+        margin-bottom: 30px;
+    }
+    .inpNameCat{
+        width: 70%;
+        height: 30px;
+        margin-top: 5px;
+        border-radius: 10px;
+    }
+    .errorInput{
+        width: 30%;
+        height: 30px;
+        margin-top: 5px;
+        border-radius: 10px;
+        border-color: red;
+        border: 3px solid none;    
+    }
+
+    .table{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 0 2em 0;
+    }
+
+    .table .tableHead td{
+        padding: 0.2em .47em;
+        font-size: 15px;
+    }
+
+    .table .tableBody tr td{
+        font-size: 14px;
+    }
+}

@@ -11,6 +11,10 @@ import Oferta from './components/Ofertas';
 import Favorites from './components/favorites/inde';
 import ModifProd from './components/ModifProd';
 import MuestraListaProds from './components/MuestraListaProductos';
+import FormCategories from './components/FormCategorias';
+import Carrito from './components/carritoComp';
+import Confirm from './components/Confirm/Confirm';
+import Succes from './components/RespuestaCompra/Succes';
 
 
 function App() {
@@ -23,6 +27,8 @@ function App() {
         <Route path='/registrarse' element={<Registrarse/>}/>
         <Route path='/confirmed' element={<RespValidaCuenta/>}/>
         <Route path='/login' element={<Login/>}/>
+        {/* categorias  */}
+        <Route path='/createCat' element={<FormCategories/>}/>
         {/* productos   */}
         <Route path='/formProd' element={<FormCreateProd/>}/>
         <Route path='/listaProds' element={<ListaProducts/>}/>
@@ -31,6 +37,11 @@ function App() {
         <Route path='/muestraListProds' element={<MuestraListaProds/>}/>
         {/* Favoritos */}
         <Route path='/userfavorites' element={<Favorites/>}/>
+        {/* compras */}
+        <Route path='/carrito' element={<Carrito/>}/>
+        <Route path='/confirm' element={<Confirm/>}/>
+        <Route path='/success' element={<Succes/>}/> {/* respuesta confirma compra*/}
+        
       </Routes>
       
       
