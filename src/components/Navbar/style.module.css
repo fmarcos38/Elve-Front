@@ -1,0 +1,28 @@
+.barra{
+    background-color: rgba(59, 253, 253, 0.858);
+    /* border-bottom: 3px solid #67de95; */
+    height: 45px;
+}
+.logo{
+    width: 40px; 
+    border-radius: 30px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+.btnNavbar{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.nombUser{
+    font-size: 17px;
+}
+
+@media screen and (max-width:480px){
+     .barra{
+        height: 45px;
+    } 
+    .logo{
+        width: 35px;
+        margin-bottom: 5px;
+    }
+}

@@ -1,0 +1,21 @@
+
+
+.texto {
+    color: #21d7d7;   
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 60px;
+}
+
+.gif-dog{   
+    width: 40%;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 120px;
+}
+
+@media screen and (max-width:480px){
+    .gif-dog{
+        margin-left: 100px;
+    }
+}
+   
