@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Questrial&display=swap');
+
+.containerAllPerfil{
+    display: flex;
+    justify-content: center;
+}
+
+.ContainerPerfil{
+    display: flex;
+    padding: 1em;
+    align-items: center;
+    width: fit-content;
+    justify-content: right;
+    border-radius: 0.75rem;;
+    background-color:  #F2F3EB;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+.namediv{
+    display: flex;
+    border: 30px;
+    justify-content: center;
+    margin: 10px 0px 0px;
+    font-size: 15px;
+}
+.name{
+ background-color: white;
+ margin-right: 5px;
+ border-radius: 5px;
+}
+
+.none{
+    display: none;
+}
+
+@media screen and (max-width: 850px){
+
+    .ContainerPerfil{
+        padding: 1em 0;
+    }
+    .imgurl{
+        width: 110px;
+    }
+}
