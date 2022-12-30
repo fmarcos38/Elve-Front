@@ -1,0 +1,88 @@
+.createProperty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    height: 100%;
+}   
+.formLog{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    height: 55%;
+    width: 45%;  
+    background-color: rgb(164, 218, 229);
+    margin-top: 30px;
+    /* background-size: cover; */
+}  
+.googleAutenticatorWrapper p {
+      margin: 10px 0 10px 35px;
+}  
+.titulo{
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(8, 8, 8);
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 60px;
+}  
+.buttonIngresar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+.errorSpan{
+    color: red;
+}
+.Olvido{
+    margin-top: 10px;
+    height: 40px;
+}
+.btnGoogle{
+    margin-left: 100px;
+}
+.or{
+    color: rgb(175, 175, 175);
+    font-weight: 500;
+    font-size: 15px;
+    padding: .5em;
+    text-align: center;
+    margin:0 .5em 0 .5em ;
+} 
+.pMensaje{
+    color: aquamarine;
+}
+.buttom{
+    /* margin: .3em;
+    padding: 0.55em; */
+    border-radius: 0.3em;
+    /* width: 80%; */
+}
+/* para pantalla telefonos */
+@media screen and (max-width:480px){
+    
+    .formLog{
+        margin-top: 20px;
+        height: 50%;
+        width: 90%;
+        background-color: rgb(102, 235, 204);
+    } 
+}
+
+/* para pantalla tv */
+@media(min-width:1023px){
+    /* .createProperty{
+      padding: 10px 0 0 0;
+    } */
+    .formLog{
+      margin: 10px auto;
+      width: 40%;
+    }
+    .login{
+        width: 70%;
+        /* background-color: blueviolet; */
+    }
+}

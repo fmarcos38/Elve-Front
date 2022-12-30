@@ -3,10 +3,10 @@ import  './cardProd.css';
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  addFavorites, getAllFavs, deleteFav, getCarritoUser,  setShoppingCar, getProductos, getCategories, elimProd, 
-} from "../../redux/Actions";
-
+    addFavorites, getAllFavs, deleteFav, getCarritoUser,  setShoppingCar, getProductos, getCategories, elimProd, 
+  } from "../../redux/Actions";
 import swal from "sweetalert";
+
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import { Button } from "@mui/material";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -27,6 +27,8 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
     const [cantPedida, setCantPedida] = useState(1);
     //estado para el precio Segun tamaño prod elegido
     const [precio, setPrecio] = useState(priceG);
+
+    const allC = useSelector(state => state.categories);
 
     const cart = useSelector((state) => state.cart);  
     const navigate = useNavigate();  
@@ -255,7 +257,7 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
         <div className="contCarritoyFav">
 
         {/* btn-carrito */}       
-        <AddShoppingCartIcon disable onClick={() => handleClickShopping(_id)}/>          
+        <AddShoppingCartIcon disable onClick={() => handleClickShopping(_id)} className={"cardButton"} />          
 
         {/* btn-fav */}
         <div >
@@ -269,6 +271,7 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
 
         </div>
       }  
+      {/* botones Elim y edita P/admin */}
       {
         store?.user.role === 'admin' &&
         <div className="contCarritoyFav">

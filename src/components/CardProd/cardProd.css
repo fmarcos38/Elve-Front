@@ -4,7 +4,7 @@
     margin-right: 10px;
     margin-bottom: 30px;
     width: 370px;  
-    height: 500px;  
+    height: 550px;  
     background-color:rgb(230, 223, 223);
     position: relative;
     min-height: 15rem;
@@ -144,6 +144,7 @@
    background-color: rgb(230, 223, 223);
    color: black;
    margin-right: 5px;
+   margin-bottom: 5px;
 } 
 .cardButtonFav{
    border: 1px solid #252525;
