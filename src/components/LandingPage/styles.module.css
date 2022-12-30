@@ -16,7 +16,7 @@
 .btnGO{
     margin-top: 10px;
 }
-@media screen and (max-width:480px){  
+@media screen and (max-width:799px){  
     .divFotoSmartphone{
         display: flex;
         flex-direction: column;
@@ -41,6 +41,11 @@
     }
     .btnGO{
         background-color: aqua;
+    }
+}
+@media screen and (min-width:480px){
+    .contbtn{
+        display: none;
     }
 }
 @media screen and (min-width:800px){
@@ -75,7 +80,5 @@
         width: 45%;
         border-radius: 10px;
     }
-    .contbtn{
-        display: none;
-    }
+    
 }

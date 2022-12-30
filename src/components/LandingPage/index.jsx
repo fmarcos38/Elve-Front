@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import gif from '../../imagenes/gifCafe2.gif';
 import img1 from '../../imagenes/chapitas.jpg';
 //import Navbar from '../Navbar';
-
+import Footbar from '../Footbar/Footbar';
 
 export default function LandingPage() {
 
@@ -54,6 +54,7 @@ export default function LandingPage() {
       {/* fin btn */} 
         
       </div>
+      <Footbar/>
     </>
   )
 }
