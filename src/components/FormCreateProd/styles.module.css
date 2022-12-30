@@ -1,0 +1,125 @@
+.bodyCreateProperty {
+    min-height: 100vh;
+    height: auto;/* abarca todo el alto de la pantalla */
+    width: 100%;
+    background: -webkit-linear-gradient(to right, #FF416C 0%, #ff765e 100%) no-repeat center center fixed; 
+    background: linear-gradient(0deg, #FF416C 0%, #ff765e 100%) no-repeat center center fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formLogin{    
+    
+    border-radius: 20px;
+    height: auto;
+    width: 80%;  
+    background-color: rgb(164, 218, 229);
+    background-size: cover;
+} 
+.titleForm {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;    
+}
+.selectCat{
+    height: 25px;
+}
+.imgPre{
+    width: 15%;
+    height: 140px;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+.contDiscount{
+    margin-right: 30px;
+}
+.msjError{
+    background-color: #fff;
+    color: red;
+    width: 180px;
+}
+/* para pantalla tv */
+@media screen and (max-width:480px){
+    .formLogin{
+        width: 90%;
+        height:auto;        
+    } 
+    .titleForm {
+        font-size: 18px;    
+    }
+    .selectCat, .inpNameP, .inpPrice, .inpDescrip, .inpDesc, .inpFoto{
+        width: 98%;
+        margin-bottom: 5px;
+    }
+    .inpFoto{
+        font-size: 13px;
+    }
+    .imgPre{
+        width: 35%;
+        height: 90px;
+        margin-top: 10px;
+        margin-left: 25px;
+    }
+    .contBtn{
+        margin-top: 30px;      
+    }
+    .buttonIngresar{
+        width: 98%;        
+        align-items: center; 
+    }
+}
+
+/* pantallas pc */
+@media screen and (min-width:800px){
+        
+    .contNameDescrip{
+        display: flex; /*con display, justify-content, aling-items -> dejo centrados */
+        justify-content: center;
+        align-items: center;
+        width: 98%;
+    }
+    .contName{
+        margin-left: 40px;
+    }
+    .inpNameP{
+        width: 50%;
+    }    
+    .contDescription{    
+        margin-top: 30px;
+        margin-left: 60px;    
+        width: 98%;
+    }
+    .inpDescrip{
+        width: 70%;
+    }
+    .contPriceDescuento{
+        display: flex; /*con display, justify-content, aling-items -> dejo centrados */
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .contPriceFrom{
+        width: 30%;
+       
+    } 
+    .contFotoCat{
+        margin-left: 10px;
+        margin-top: 30px;
+    }
+    .contCategGral{
+        width: 25%;
+    }
+    .contFoto{
+        width: 65%;
+        margin-left: 50px;
+    }
+    .contBtn{
+        margin-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;       
+    }
+    .buttonIngresar{
+        width: 99%;
+    }
+    
+}

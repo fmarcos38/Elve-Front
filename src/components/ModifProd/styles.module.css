@@ -1,0 +1,179 @@
+.bodyModif {
+    height: 100vh;/* abarca todo el alto de la pantalla */
+    width: 100%;
+    background: -webkit-linear-gradient(to right, #FF416C 0%, #ff765e 100%) no-repeat center center fixed; 
+    background: linear-gradient(0deg, #FF416C 0%, #ff765e 100%) no-repeat center center fixed;   
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+}
+/* estilos Datos Actuales */
+.Data{    
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    border-radius: 20px;
+    height: auto;
+    width: 20%;  
+    background-color: rgb(164, 229, 165);    
+} 
+.titleDataActual {
+    color: rgb(45, 33, 156);   
+}
+.imgPre{
+    width: 55%;
+    height: 140px;
+    margin-top: 10px;
+}
+/* Fin estilos datos Act */
+/* estilos modif prod */
+
+.formLogin{        
+    border-radius: 20px;
+    height: auto;
+    width: 70%;  
+    background-color: rgb(164, 218, 229);
+    background-size: cover;
+    margin-right: 40px;
+} 
+.titleForm {
+    color: rgb(45, 33, 156);  
+    font-size: 24px;
+    font-weight: 600; 
+    margin-left: 30%;   
+}
+.labCat, .labDescrip{
+    margin-left: 20px;
+}
+.selectCat{
+    margin-right: 30px;
+}
+.inpDescri{
+    width: 80%;
+}
+.labDesc{
+    margin-left: 20px;
+    margin-right: 20px;    
+}
+.inputDesc{
+    width: 40px;
+    border-radius: 20px;
+}
+.imgPreModif{
+    width: 20%;
+    height: 200px;
+}
+.btnModificar{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+/* para tel */
+@media screen and (max-width:480px){
+    .bodyModif {   
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        height: auto;
+    }
+    .Data{
+        width: 80%;
+        height:auto;        
+    } 
+    .formLogin{
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+        height: auto;
+        width: 90%;
+        margin-right: 0;
+    }
+    .titleForm {
+        font-size: 16px;
+        margin-left: 15px;  
+    }
+    .labCat{
+        margin-left: 10px;
+        
+    }
+    .selectCat{
+        margin-left: 10px;
+        width: 60%;
+    }
+    .labName{
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+    .inpNameP, .labDescrip, .inpDescri, .inputPricG, .inpIsPromo, .labDesc, .inpFoto{
+        margin-left: 10px;
+    }
+    .inputPricG{
+        width: 110px;
+    }
+    .imgPreModif{
+        width: 35%;
+        height: 90px;
+        margin-top: 10px;
+        margin-left: 25px;
+    }
+    .btnModificar{
+        margin-left: 10px;
+        margin-top: 20px;
+        width: 93%;      
+    }
+}
+
+/* pantallas pc */
+@media screen and (min-width:800px){
+        
+    .contNameDescrip{
+        display: flex; /*con display, justify-content, aling-items -> dejo centrados */
+        justify-content: center;
+        align-items: center;
+        width: 98%;
+    }
+    .contName{
+        margin-left: 40px;
+    }
+    .inpNameP{
+        width: 50%;
+    }    
+    .contDescription{    
+        margin-top: 30px;
+        margin-left: 60px;    
+        width: 98%;
+    }
+    .inpDescrip{
+        width: 70%;
+    }
+    .contPriceDescuento{
+        display: flex; /*con display, justify-content, aling-items -> dejo centrados */
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .contPriceFrom{
+        width: 30%;
+       
+    } 
+    .contFotoCat{
+        margin-left: 10px;
+        margin-top: 30px;
+    }
+    .contCategGral{
+        width: 25%;
+    }
+    .contFoto{
+        width: 65%;
+        margin-left: 50px;
+    }
+    .contBtn{
+        margin-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;       
+    }
+    .buttonIngresar{
+        width: 99%;
+    }
+    
+}

@@ -1,0 +1,105 @@
+.containerLP{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 95%;
+    margin-left: 30px;
+}
+.imagenLP{
+    width: 45px;
+}
+
+.contFiltros{
+    width: 80%;    
+    display: flex; /*con display, justify-content, aling-items -> dejo centrados los filtros*/
+    justify-content: center;
+    align-items: center;  
+    border-radius: 10px;  
+    margin-bottom: 10px; 
+}    
+.btnFiltro{
+    background-color:rgb(80, 169, 196);
+    border: none;
+    border-radius: 10px;
+    margin: 10px 10px;
+    padding: 5px;
+    color: white;
+    width: auto;
+    
+}
+.selectFiltro{
+    background-color:rgb(80, 169, 196);
+    color: white;
+    border-radius: 5px;
+    width: 150px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+.btnFiltro:hover{
+    background-color: rgb(151, 67, 172);
+    color: white;
+}
+.inputSearch{
+    border-radius: 10px;
+}
+.btnSubmit{
+    border-radius: 10px;
+    background-color: rgb(160, 240, 189);
+}
+.btnSubmit:hover{
+    background-color: rgb(151, 67, 172);
+    color: white;
+}
+.btnBusca{
+    margin-top: 5px;
+    height: 22px;
+}
+.iconoLupa{
+    font-size: 13px;
+}
+@media screen and (max-width:655px){
+    .containerLP{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .imagenLP{
+        height: 20px;
+        width: 10px;
+        border-radius: 10px;
+    }
+    .contFiltros{
+        display: none;
+    }    
+    .contFiltrosPCH{
+        margin-top: 3px;
+        margin-bottom: 5px;
+    }
+    .btnFiltro{
+        font-size: 12px;
+    }
+    .inputSearchPCH{
+        margin-top: 0;
+    }
+    .btnResetFiltro{
+        font-size: 10px;
+    }
+    .selectFiltroPCH{
+        width: 100px;
+        height: 22px;
+    }
+    .tableLP{
+        display: table;
+        flex-direction: column;
+        width: 98%;
+        margin-left: 10px;
+    }
+    .descripT{
+        display: none;
+    }
+}
+@media screen and (min-width:655px){
+    
+    .contFiltrosPCH{
+        display: none;
+    }
+}
