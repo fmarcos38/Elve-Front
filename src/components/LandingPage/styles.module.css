@@ -1,0 +1,81 @@
+.contGral{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contTitulo{
+    color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.img1{
+    border-radius: 10px;
+}
+.btnGO{
+    margin-top: 10px;
+}
+@media screen and (max-width:480px){  
+    .divFotoSmartphone{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }  
+    .img1{
+        width: 70%;  
+        margin-top: 20px;      
+    }
+    .titulo{
+        margin-top: 25px;
+        font-size: 18px;
+    }
+    .titulo2{
+        font-size: 14px;
+    }
+    .titulo3{
+        font-size: 12px;
+    }
+    .divFoto{
+        display: none;
+    }
+    .btnGO{
+        background-color: aqua;
+    }
+}
+@media screen and (min-width:800px){
+    .titulo{
+        font-size: 22px;
+    }
+    .titulo2{
+        margin-top: 0px;
+        font-size: 18px;
+    }
+    .divFotoSmartphone{
+        display: none;
+    }
+    .divFoto{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contfoto, .contgif{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contfoto{
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .img1{
+        width: 75%;        
+    }
+    .gif{
+        width: 45%;
+        border-radius: 10px;
+    }
+    .contbtn{
+        display: none;
+    }
+}
