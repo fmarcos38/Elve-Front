@@ -15,6 +15,9 @@ import FormCategories from './components/FormCategorias';
 import Carrito from './components/carritoComp';
 import Confirm from './components/Confirm/Confirm';
 import Succes from './components/RespuestaCompra/Succes';
+import UserOrdersDetail from './components/UserProfile/UserOrdersDetails';
+import ListaVentas from './components/ListaVentas';
+import DetalleCompra from './components/DetalleCompra';
 
 
 function App() {
@@ -41,7 +44,9 @@ function App() {
         <Route path='/carrito' element={<Carrito/>}/>
         <Route path='/confirm' element={<Confirm/>}/>
         <Route path='/success' element={<Succes/>}/> {/* respuesta confirma compra*/}
-        
+        <Route path='/user/compra/detalle/:id' element={<UserOrdersDetail/>}/>
+        <Route path='/listaVentas' element={<ListaVentas/>}/>
+        <Route path='/compraDetalle/:_id' element={<DetalleCompra/>}/>
       </Routes>
       
       

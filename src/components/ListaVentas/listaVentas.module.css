@@ -1,0 +1,100 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2em 0 0 0;
+    padding: 0;
+}
+/*---FILTROS--------- */
+.contFiltros{
+    background-color: rgba(10, 10, 10, 0.603);
+    width: 65%;     
+    display: flex; /*con display, justify-content, aling-items -> dejo centrados los filtros*/
+    justify-content: center;
+    align-items: center;  
+    border-radius: 10px;  
+    margin-bottom: 10px; 
+}    
+.btnFiltro, .btnResetVnts{
+    background-color:rgb(80, 169, 196);
+    border: none;
+    border-radius: 10px;
+    margin: 10px 10px;
+    padding: 5px;
+    color: white;
+    width: auto;
+    
+}
+.btnFiltro:hover{
+    background-color: rgb(151, 67, 172);
+    color: white;
+}
+/*--------------------------------*/
+.table{
+    border: 1px solid #eaeaea;
+    text-align: center;
+    width: 70%;
+    border-collapse:collapse;
+    margin: 0 auto 2em auto;
+}
+.table .tableHead{
+    font-size: 17px;
+    background-color: #f5f5f5;
+}
+.table .tableHead td{
+    padding: 0.2em 2em;
+}
+.table .tableBody tr td{
+    padding: 1em 0 0 0;
+    border-bottom: 1px solid #eaeaea;
+    font-weight: 300;
+    width: 100px;
+    padding: .5em;
+    color: white;
+}
+.btnLista{
+    background-color: rgba(45,21,21,255);
+    color: rgba(245, 245, 220, 0.76);
+    border-radius: 20px;
+}
+.btnLista:hover{
+    background-color: rgb(38, 182, 234);
+    color: rgba(45,21,21,255);
+    border: 2px solid black;
+}
+
+@media screen and (max-width: 632px){
+    .container{
+        display: table; 
+        margin: 0 0 0 0;
+    }
+    .contFiltros{
+        background-color: rgba(10, 10, 10, 0.603);
+        width: 95%;     
+        display: table-row; /*con display, justify-content, aling-items -> dejo centrados los filtros*/
+    } 
+    .inputVnts{
+        margin-left: 10px;
+    }
+    .btnResetVnts{
+        margin-left: 10px;
+    }
+    .table{
+        display: table;
+        flex-direction: column;
+        width: 98%;
+        margin-left: 10px;
+    }
+    .table .tableHead th{
+        padding: 0.2em .1em;
+        font-size: 13px;
+    }
+    .email{
+        display:none;
+    }
+    .table .tableBody tr td{
+        padding: 1em .1em;
+        font-size: 14px;
+    }   
+
+}
