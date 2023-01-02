@@ -1,5 +1,5 @@
 .contFootbar{
-    background-color: rgba(135, 219, 199, 0.459);
+    background-color: rgba(135, 219, 199, 0.295);
     display: flex;
     align-items: center;
     width: 100%;
@@ -87,6 +87,14 @@
     .leftFooterPCH{
         display: none;
     }
+    .textoIzq{
+        font-size: 12px;
+    
+    }
+    .midFooter {
+        width: 55%;  
+        text-align: center;
+    } 
 }
 @media screen and (max-width: 920px) {
     .leftFooter {

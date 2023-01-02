@@ -15,13 +15,13 @@ function Footbar() {
 
         <div className="leftFooter">
           <p className='textoIzq'>Horarios:</p> 
-          <p className='textoIzq'>Lunes a Sabados: de 8:30 a 21hs</p>
-          <p className='textoIzq'>Domingos: de 16 a 21hs</p>
+          <p className='textoIzq'>Lunes a Sabados: de 9 a 13 y de 16 a 20hs</p>
+          <p className='textoIzq'>Domingos: de 16 a 20hs</p>
         </div>
         {/* horarios pantalla chica */}
         <div className="leftFooterPCH">
           <p className='textoIzqPCH'>Horarios:</p> 
-          <p className='textoIzqPCH'>Lun a Sab: 8:30 a 21hs</p>
+          <p className='textoIzqPCH'>Lun a Sab: 9a13 - 16a20hs</p>
           <p className='textoIzqPCH'>Dom: 16 a 21hs</p>
         </div>
 
