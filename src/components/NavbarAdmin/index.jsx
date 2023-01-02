@@ -203,9 +203,9 @@ function NavbarAdmin() {
               <Box  className={styles.contInfoUserLog}>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    {userActual.user.email === 'franco_freakout@hotmail.com' && <p className={styles.nombUser}>Hola, {userActual.user.name} vikingo sexy</p> }
+                    {userActual.user.email === 'franco_freakout@hotmail.com' && <p className={styles.nombUser}>Hola, {userActual.user.name} novio de La Cande</p> }
                     {userActual.user.email === 'franco.mellado@hotmail.com' && <p className={styles.nombUser}>Hola, {userActual.user.name} pedazo de PUTO !!</p> }                   
-                    {userActual.user.email === 'fmarcos_23@hotmail.com' && <p className={styles.nombUser}>Hola, {userActual.user.name} admin de esta linda Pag</p> }                    
+                    {userActual.user.email === 'fmarcos_23@hotmail.com' && <p className={styles.nombUser}>Hola, {userActual.user.name} admin de esta cool Page</p> }                    
                   </IconButton>
                 </Tooltip>
         
