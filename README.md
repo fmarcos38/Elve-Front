@@ -2,7 +2,8 @@
 Ecommerce para un cafe al paso en la ciudad de mar del plata -> en proceso
 
 
-URL --> https://elven-coffee.vercel.app/
+URL --> https://elven-coffee.vercel.app
+
 FUNCIONALIDADES: hasta el momento (pasarela de pagos Por ahora con usuarios de test)
 //--Modo no registrado -->
 Podés ver el menú, con sus categorías --> sus productos
