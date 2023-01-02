@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./style.module.css";
 import userLog from "../../localStorage/service";
-//import NavbarAdmin from "../NavbarAdmin";
+import NavbarAdmin from "../NavbarAdmin";
 import logo from "../../imagenes/logo.jpg";
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
@@ -69,7 +69,7 @@ export default function Navbar() {
     return user?.user.role === 'admin' ? //sino pongo la bandera(?) desp de user no renderiza
     (
       <>
-        {/* <NavbarAdmin/> */}
+        <NavbarAdmin/>
       </> 
     ) : (
     <div className={styles.barra}>

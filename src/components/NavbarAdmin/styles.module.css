@@ -1,0 +1,71 @@
+.barra{
+    background-color: rgba(59, 253, 253, 0.858);
+    height: 57px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo{
+    width: 40px; 
+    border-radius: 30px;
+    margin-right: 15px;
+    
+}
+.btnNavbar{
+    font-size: 18px;
+}
+.nombUser{
+    font-size: 17px;
+}
+.formControl{
+    width: 120px;
+    height: 5px;
+    margin-bottom: 30px;
+    margin-left: 20px;       
+}
+.inpProd{
+     font-size: 15px;   
+}
+.menuPantallaG{
+    margin-bottom: 8px;
+} 
+.selectProd{
+    margin-left: 2px;  
+}
+.linkProd{
+    text-decoration: none;
+    color: black;
+}
+.contInfoUserLog{
+    align-items: flex-end;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+.nombUser{
+    color: blueviolet;
+}
+@media screen and (max-width:480px){
+    
+    .logo{
+        width: 45px;
+        margin-bottom: 0px;
+    }
+    .nombUser{
+        font-size: 12px;
+    }
+    .menuPantallaG{
+        display: none;
+    }
+}
+@media screen  and (max-width:1020px){
+    .menuPantallaG{
+        display: none;
+    }
+    
+}
+@media screen  and (min-width:1019px){
+    .menuPantallaCH{
+        display: none;
+    }
+    
+}
