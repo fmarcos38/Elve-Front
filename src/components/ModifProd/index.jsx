@@ -70,7 +70,7 @@ export default function ModifProd() {
         button: "Aceptar",
       });
     setInput({ category: "", name: "", description: "", imagen: "", priceG: "", priceCH: "", discount: "", isPromo: ""});
-    navigate('/home');
+    navigate('/muestraListProds');
   }
   
 
@@ -104,7 +104,7 @@ export default function ModifProd() {
             }
             {/* priceCH */}
             {
-              buscoProd.precioCH > 0 &&
+              buscoProd.priceCH > 0 &&
               (
                 <div>
                   <label className={styles.labPrice}>Precio T.chico: ${buscoProd.priceCH}</label>
