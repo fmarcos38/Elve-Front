@@ -24,7 +24,7 @@ export function registrarse(data){
 };
 export function validaCuenta(token){
     return async function(){
-        console.log("tokenAction:", token)//llega bien
+        //console.log("tokenAction:", token)//llega bien
         /* const resp = */ await axios.get(`${url}/auth/validaCuenta/${token}`);
         /* return dispatch({type: VALIDA_CUENTA, payload: resp.data}); */
     }
