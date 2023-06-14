@@ -19,7 +19,7 @@ export function getUsers(){
 };
 export function registrarse(data){
     return async function(dispatch){
-        const resp = await axios.post(`${url}/users/registrarse`, data)
+      await axios.post(`${url}/users/registrarse`, data)
     }
 };
 export function validaCuenta(token){
@@ -208,7 +208,7 @@ export function getCarritoUser(idU){
 //--elim prod del carrito
 export function deleteProductCart (data){
     return async function(){
-      const resp =  await axios.post(`${url}/users/deleteProd/cart`, data);
+      await axios.post(`${url}/users/deleteProd/cart`, data);
     }
 }
 //--vacia carrito

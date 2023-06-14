@@ -73,11 +73,11 @@ export default function Navbar() {
       </> 
     ) : (
     <div className={styles.barra}>
-       <Container maxWidth="xl">
-           <Toolbar disableGutters>
+      <Container maxWidth="xl">
+          <Toolbar disableGutters>
                 {/* logo */}
                 <Link to="/" style={{ textDecoration: "none" }}>            
-                   <img src={logo} alt="logo not found" className={styles.logo}/>
+                  <img src={logo} alt="logo not found" className={styles.logo}/>
                 </Link>
 
                 {/* menu pant grande */}
@@ -134,20 +134,20 @@ export default function Navbar() {
 
                 {/* carrito */}
                 {
-                   userActual &&
-                   (
-                        <Box>
-                           <IconButton sx={{ mr: "6px", mt: "4px", p: "9px 6px 8px 6px" }}>
-                                <Link to="/carrito" style={{ color: "grey" }}>
-                                    <AddShoppingCartIcon  fontSize="medium"/>
-                                    {
-                                      cart.length !==0 && 
-                                      <NoiseControlOffIcon sx={{color:'#7f0000',verticalAlign: 'top',ml:'-8px'}}/>
-                                    }
-                                </Link>
-                            </IconButton>
-                        </Box>
-                   )
+                  userActual &&
+                  (
+                    <Box>
+                      <IconButton sx={{ mr: "6px", mt: "4px", p: "9px 6px 8px 6px" }}>
+                        <Link to="/carrito" style={{ color: "grey" }}>
+                          <AddShoppingCartIcon  fontSize="medium"/>
+                          {
+                            cart.length !==0 && 
+                            <NoiseControlOffIcon sx={{color:'#7f0000',verticalAlign: 'top',ml:'-8px'}}/>
+                          }
+                        </Link>
+                      </IconButton>
+                    </Box>
+                  )
                 }
 
                 {/* menu para usuario logueado Cuando pasa el mouse*/}
@@ -157,7 +157,7 @@ export default function Navbar() {
                       <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                           <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                            <p className={styles.nombUser}>Hola, {userData.name}</p>
+                            {/* <p className={styles.nombUser}>Hola, {userData.name}</p> */}
                             {/* <Avatar src={currentUser?.user.img || "/broken-image.jpg"} /> */}
                           </IconButton>
                         </Tooltip>

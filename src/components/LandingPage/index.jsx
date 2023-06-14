@@ -16,7 +16,7 @@ export default function LandingPage() {
           <h1 className={styles.titulo}>
             Bienvenidos a ELVEN COFFEE TO GO...
           </h1>
-          <h3 className={styles.titulo2}>Café de especialidad y Pastelería de autor</h3>
+          <span className={styles.titulo2}>Café de especialidad y Pastelería de autor</span>
         </div>
 
       {/* para pantalla smartphone */}

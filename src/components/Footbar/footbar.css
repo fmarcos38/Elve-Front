@@ -19,7 +19,7 @@
     font-size: 13px;
     margin: 0 0 0 0;
 }
-  
+
 .midFooter {
     width: 60%;  
     text-align: center;
@@ -44,7 +44,6 @@
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     color: #eb8ddd;
     transition: all 0.5s;
-    margin: 0.5vmax;
 }  
 .subDivDerecha > a:hover {
     color: #0e2de0;
@@ -83,30 +82,62 @@
         display: none;
     }
 }
-@media screen and (min-width: 550px){
+
+@media screen and (min-width: 551px) and (max-width: 849px){
+    .leftFooter{
+        display: none;
+    }
+    .leftFooterPCH{
+        width: 27%;        
+    }
+    .textoIzqPCH{
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 10px;  
+        margin-left: 1rem;
+        color: azure;
+    }
+    .midFooter {
+        width: 45%;  
+        text-align: center;
+    } 
+    .rightFooter{
+        align-items: end;
+    }
+}
+
+@media screen and (min-width: 850px) {
     .leftFooterPCH{
         display: none;
     }
-    .textoIzq{
-        font-size: 12px;
-    
-    }
-    .midFooter {
-        width: 55%;  
-        text-align: center;
-    } 
-}
-@media screen and (max-width: 920px) {
-    
     .leftFooter {
-        width: 35%;
+        margin-left: 1rem;
+        width: 30%;
+    }
+    .textoIzq{
+        font-size: 10px;
+    
+    }
+    .midFooter {
+        width: 50%;  
+        text-align: center;
+    }   
+}
+
+@media screen and (min-width: 1130px) {
+    .leftFooterPCH{
+        display: none;
+    }
+    .leftFooter {
+        margin-left: 1rem;
+        width: 20%;
     }
     .textoIzq{
         font-size: 12px;
     
     }
     .midFooter {
-        width: 55%;  
+        width: 60%;  
         text-align: center;
     }   
 }
