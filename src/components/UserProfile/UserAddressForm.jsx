@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "../UserProfile/UserAddressForm.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { createAddress, updateUserAddress, getUserAddress } from "../../redux/Actions";
 import LocalStorage from '../../localStorage/service';
 import swal from "sweetalert";
@@ -19,7 +19,7 @@ export default function UserAddressForm(){
   useEffect(()=>{
     //console.log("mail:",store.user.email)
     dispatch(getUserAddress({email:store.user.email}));
-  },[dispatch]);
+  },[dispatch, store.user.email]);
 
   useEffect(() => {//actualizo con la data desde la DB
     

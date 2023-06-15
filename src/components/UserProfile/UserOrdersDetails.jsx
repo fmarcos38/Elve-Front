@@ -11,7 +11,7 @@ export default function UserOrdersDetail() {
 
   useEffect(()=>{
     dispatch(getCompraDetalle(id))
-  },[dispatch])
+  },[dispatch,id]);
 
   console.log(purchase)
 

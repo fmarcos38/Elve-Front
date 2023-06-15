@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import Button from '@mui/material/Button';
 import style from './Confirm.module.css';
@@ -21,7 +21,7 @@ export default function Confirm() {
     //asi no se llena de compras en estado pending
     useEffect(()=>{
         return () => dispatch(eliminaCompraSinAbonar());
-    },[]);
+    },[dispatch]);
 
     return (
         <div className={style.container}>
