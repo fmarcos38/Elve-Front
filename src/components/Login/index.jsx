@@ -10,6 +10,7 @@ import {getUsers, login} from "../../redux/Actions";
 import styles from './styles.module.css';
 import {useSelector} from 'react-redux';
 import { useEffect } from 'react';
+import LoginGoogle from './loginGoogle';
 
 function Login() {
   
@@ -17,7 +18,8 @@ function Login() {
   const [password, setPassword] = useState({key: "", valid: null});
   const dispatch = useDispatch();  
   const navigate = useNavigate(); 
-  /* me traigo user para ver si validó su cuenta */
+
+  /* me traigo los users para ver si validó su cuenta */
   const users = useSelector(state => state.users);
   let buscoUser = users.find(u => u.email === email.key);//MUY ATENTO A PONER .KEY
 
@@ -88,6 +90,9 @@ function Login() {
 
       <div className={styles.or}>──────────OR──────────</div>
 
+      {/* login with google */}
+      <LoginGoogle/>
+
       <p className={styles.pMensaje}>¿No tienes una cuenta?</p>
       
       <Link to={"/registrarse"} style={{ textDecoration: "none" }}>
@@ -95,6 +100,7 @@ function Login() {
           Registrate
         </Button>
       </Link>
+
     </div>
   )
 }

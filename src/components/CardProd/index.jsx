@@ -27,8 +27,7 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
     const [cantPedida, setCantPedida] = useState(1);
     //estado para el precio Segun tamaño prod elegido
     const [precio, setPrecio] = useState(priceG);
-
-    const allC = useSelector(state => state.categories);
+ 
 
     const cart = useSelector((state) => state.cart);  
     const navigate = useNavigate();  
@@ -44,7 +43,7 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
           dispatch(getCarritoUser(store.user._id));
           dispatch(getAllFavs(store.user._id));
         }
-    }, [dispatch,getAllFavs]);
+    }, [dispatch, store]);//<------realice un cambio 14/6
     
     const handleSuma = (e) => {
         //no hay stock
@@ -172,8 +171,8 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
       {
         discount >= 1 &&
         <p className='desc'>
-               <strong className={"discuento"}>-{discount}%</strong> 
-               <LocalOfferIcon style={{fontSize:'400%',color:'#2fc4ede6', marginLeft:'95%', position:'absolute', zIndex:'110'}}/>
+          <strong className={"discuento"}>-{discount}%</strong> 
+          <LocalOfferIcon style={{fontSize:'400%',color:'#2fc4ede6', marginLeft:'95%', position:'absolute', zIndex:'110'}}/>
         </p>
       }
       {/* foto */}
@@ -182,7 +181,7 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
       </div>
       {/* nombre Prod */}
       <div className="nombreProd">             
-           <h3 className="name">{name.toUpperCase()}</h3>
+          <h3 className="name">{name.toUpperCase()}</h3>
       </div>
       {/* descrip/caract */}     
       <div className="div-descrip">
@@ -195,7 +194,7 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
         <div className="div-precio">
           {/* Precio para bebidas */}          
           <label className="lab-prcio">
-            <input id="radio1" type="radio" value={priceG} checked={precio == priceG ? true : false}
+            <input id="radio1" type="radio" value={priceG} checked={precio === priceG ? true : false}
               onChange={handleRadioB}
             />
             Precio T. Grande 340ml(12oz): ${priceG}          
@@ -205,7 +204,7 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
             <>
             <br></br>
             <label className="lab-prcio">          
-            <input id="radio2" type="radio" value={priceCH} checked={precio == priceCH ? true : false}
+            <input id="radio2" type="radio" value={priceCH} checked={precio === priceCH ? true : false}
               onChange={handleRadioB} 
             />
               Precio T. Chico 225ml(8oz): ${priceCH}
@@ -257,7 +256,7 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
         <div className="contCarritoyFav">
 
         {/* btn-carrito */}       
-        <AddShoppingCartIcon disable onClick={() => handleClickShopping(_id)} className={"cardButton"} />          
+        <AddShoppingCartIcon disable onClick={() => handleClickShopping(_id)} className={"btn_agregaCarrito"} />          
 
         {/* btn-fav */}
         <div >

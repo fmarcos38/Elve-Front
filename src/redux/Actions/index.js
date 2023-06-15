@@ -2,7 +2,7 @@
 import axios from "axios";
 import {url} from "../../urls";
 import {
-  LOAD, LOGIN, GET_USERS, ADD_FAVS, GET_ALL_FAV, GET_CATEGORIES, GET_CARRITO_USER, GET_PRODUCTOS,
+  LOAD, LOGIN, LOGIN_GOOGLE, GET_USERS, ADD_FAVS, GET_ALL_FAV, GET_CATEGORIES, GET_CARRITO_USER, GET_PRODUCTOS,
   POST_COMPRA, GET_COMPRAS, MERCADO_PAGO, GET_COMPRAS_USER, GET_USER_BY_ID, GET_USER_ADDRESS,
   POST_USER_ADDRESS, UPDATE_USER_ADDRESS, GET_COMPRA_DETALLE, FILTRA_MENU, RESET, GET_PRODUCT_BY_ID,
   GET_CATEGORY_BY_ID, ELIM_PROD, FILTRA_PRICE, FILTRA_AZ_ZA, GET_PROD_BY_NAME, FILTRA_CAT, 
@@ -42,6 +42,19 @@ export function login(data){
         }        
     }
 };
+export function loginGoogle(data){  
+  return async function(dispatch){
+    const resp = await axios.post(`${url}/auth/loginGoogle`, data);
+    //cargo en el lacalStorage la data del user
+    if (resp.data.token) {
+      //asigno data al localStorage
+      localStorage.setItem('user', JSON.stringify(resp.data));
+      return dispatch({type: LOGIN_GOOGLE, payload: "ok"});
+    }else{
+      return dispatch({type: LOGIN, payload: "nook"});
+    }
+  }
+}
 export function logout(){
     localStorage.removeItem('user');
     //localStorage.removeItem("ShoppingCar");

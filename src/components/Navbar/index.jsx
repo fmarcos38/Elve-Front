@@ -4,7 +4,8 @@ import userLog from "../../localStorage/service";
 import NavbarAdmin from "../NavbarAdmin";
 import logo from "../../imagenes/logo.jpg";
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import store from "../../localStorage/service";
 
 //--material--
 import Box from '@mui/material/Box';
@@ -21,16 +22,13 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
 import NoiseControlOffIcon from '@mui/icons-material/NoiseControlOff';
-import { getUserById } from '../../redux/Actions';
 //-----------
 
 export default function Navbar() {
-
-    const user = userLog.getUserActual();//data del user logueado
     
-    const [userActual, setUserActual] = useState();//estado para actualizar user log
-    const dispatch = useDispatch();
-    const userData = useSelector(state => state.user);
+    //estado para  user log
+    const [userActual, setUserActual] = useState(undefined);
+    //const dispatch = useDispatch();
     //estados para el menu
     const [anchorElNav, setAnchorElNav] = useState(null);
     const [anchorElUser, setAnchorElUser] = useState(null);
@@ -38,13 +36,13 @@ export default function Navbar() {
     const cart = useSelector((state) => state.cart);
     const navigate = useNavigate(); 
 
+    //actualizo user logueado
     useEffect(()=>{
-      if(user){
-        setUserActual(user);//actualizo el estado con el user logeado
-        dispatch(getUserById(user.user._id));
+      const userLog = store.getUserActual(); 
+      if(userLog){
+        setUserActual(userLog);
       }
-        
-    }, []);
+    },[]);
     
     //--para manejo de menues
     const handleOpenNavMenu = (event) => {
@@ -66,7 +64,8 @@ export default function Navbar() {
     };
 
     
-    return user?.user.role === 'admin' ? //sino pongo la bandera(?) desp de user no renderiza
+    
+    return userActual?.user.role === 'admin' ? //sino pongo la bandera(?) desp de user no renderiza
     (
       <>
         <NavbarAdmin/>
@@ -157,7 +156,7 @@ export default function Navbar() {
                       <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                           <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                            {/* <p className={styles.nombUser}>Hola, {userData.name}</p> */}
+                            <p className={styles.nombUser}>Hola, {userActual.user.name}</p>
                             {/* <Avatar src={currentUser?.user.img || "/broken-image.jpg"} /> */}
                           </IconButton>
                         </Tooltip>
@@ -173,6 +172,7 @@ export default function Navbar() {
                             <Typography textalign="center">Perfil</Typography>
                           </Link>
                         </MenuItem>
+
                         <MenuItem>
                           <Link to="/userFavorites" style={{ textDecoration: "none", color: "black" }}>
                             <Typography textaling="center">Favorites</Typography>
@@ -195,8 +195,8 @@ export default function Navbar() {
                       </Link>
                     )
                 }
-           </Toolbar>
-       </Container>
+          </Toolbar>
+      </Container>
     </div>
     )
 }

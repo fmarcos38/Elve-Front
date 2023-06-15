@@ -23,6 +23,7 @@ import UserProfile from './components/UserProfile/UserProfile';
 import UserOrdersApproved from './components/UserProfile/UserOrdersApproved';
 import UserAddress from './components/UserProfile/UserAddress';
 import ListaClientes from './components/ListaClientes';
+import LoginGoogle from './components/Login/loginGoogle';
 
 function App() {
   return (
@@ -60,6 +61,8 @@ function App() {
 
         {/* rutas de prueba p/desarrollador*/}        
         <Route path='/cardProd' element={<CardProd/>}/>
+        <Route path='/loginGoogle' element={<LoginGoogle/>}/>
+        
       </Routes>      
       
     </div>
