@@ -14,6 +14,8 @@ import {gapi} from 'gapi-script';
 
 function LoginGoogle() {
 
+    const apiKey = process.env.REACT_APP_API_KEY_GOOGLE_AUTH;
+
     const [userActual, setUserActual] = useState(); 
     const dispatch = useDispatch();  
     const navigate = useNavigate(); 
@@ -23,15 +25,15 @@ function LoginGoogle() {
 
     useEffect(()=>{
         setUserActual(authService.getUserActual());
-    },[]);
+    },[userActual]);
 
 
     //---para google-------------------------------------------------------------
     useEffect(()=>{
             gapi.load("client:auth2", ()=>{
-            gapi.auth2.init({clientId: "835136281654-be13mm9i9u1rqt8jee14mk9l7fopc0a3.apps.googleusercontent.com"})
+            gapi.auth2.init({clientId: apiKey})
         });
-    },[]);
+    },[apiKey]);
 
     //creacion de funciones segun resp del back
     const responseGoogle = (resp) =>{        
@@ -64,7 +66,7 @@ function LoginGoogle() {
                 <div className="googleBtn">
             
                     <GoogleLogin
-                        clientId="835136281654-be13mm9i9u1rqt8jee14mk9l7fopc0a3.apps.googleusercontent.com"
+                        clientId= {apiKey}
                         buttonText="Login with Google"
                         onSuccess={responseGoogle}
                         onFailure={responseGoogle}
