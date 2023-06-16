@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../UserProfile/UserProfile.module.css";
 import { NavLink } from "react-router-dom";
 import EditName from "./EditName";

@@ -1,19 +1,19 @@
 .cont-cardP{ 
    margin-top: 10px;
-   margin-left: 10px;
-   margin-right: 10px;
-   margin-bottom: 30px;
-   width: 350px;  
-   height: 500px;  
-   background-color:rgb(230, 223, 223);
-   position: relative;
-   min-height: 15rem;
-   align-items: flex-start;
-   display: flex;
-   flex-direction: column;     
-   border-radius: 20px;
-   border-color: aqua;
-   border-style: solid;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    width: 370px;  
+    height: 550px;  
+    background-color:rgb(230, 223, 223);
+    position: relative;
+    min-height: 15rem;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;     
+    border-radius: 20px;
+    border-color: aqua;
+    border-style: solid;
 }
 .cont-cardChapa{
    margin-top: 10px;
@@ -108,8 +108,7 @@
    border: 1px solid aqua;
    font-weight: 480;
    border-radius: 30px;
-   margin-right: 0.5rem;
-   margin-bottom: 0.5rem;;
+   margin-left: 5px;
 }
 .agreCarrito:hover {
        background-color: #fff;
@@ -134,8 +133,8 @@
    margin-right: 10px;
    color: rgb(17, 0, 255);
 }
-/* btn -> fav y agrega */
-.cardButton, .btn_agregaCarrito {
+/* fav */
+.cardButton {
    border: 1px solid aqua;
    display: flex;
    padding: .3em;
@@ -144,12 +143,9 @@
    transition: .3s ease-in-out;
    background-color: rgb(230, 223, 223);
    color: black;
-   margin-right: 0.5rem;
-   margin-bottom: 0.5rem;
+   margin-right: 5px;
+   margin-bottom: 5px;
 } 
-.btn_agregaCarrito {
-   margin-left: 0.5rem;
-}
 .cardButtonFav{
    border: 1px solid #252525;
    display: flex;
@@ -159,8 +155,7 @@
    border: 1px solid #e33939;
    background-color: #e33939;
    color: #ffffff;
-   margin-right: 0.5rem;
-   margin-bottom: 0.5rem;
+   margin-right: 5px;
 }
 /* btnS-Admin */
 .btn-elimProd{
@@ -171,12 +166,12 @@
 figcaption {
    display:none; 
    transition: all .5s;
-}
+ }
  /* Visible texto */
-figure:hover > figcaption {
+ figure:hover > figcaption {
    display:block;
    transition: all .5s;
-}
+ }
 
 /* pantalla smartphone */
 @media screen and (max-width:480px){

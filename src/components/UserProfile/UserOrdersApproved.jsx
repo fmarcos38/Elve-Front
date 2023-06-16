@@ -15,7 +15,7 @@ export default function UserOrdersApproved(){
 
   useEffect(() => {
     dispatch(getComprasUser(userLog.user._id));
-  }, [dispatch, userLog.user._id]);
+  }, [dispatch]);
 
 
   return (

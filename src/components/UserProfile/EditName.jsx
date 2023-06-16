@@ -24,7 +24,7 @@ export default function EditName() {
 
   useEffect(()=>{
       dispatch(getUserById(store.user._id));
-  },[dispatch, store.user._id]);
+  },[dispatch]);
 
   function handleSubmit(e){
     if(!input.name){

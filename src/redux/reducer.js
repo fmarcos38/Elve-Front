@@ -1,7 +1,7 @@
 import { 
     LOAD, LOGIN, GET_USERS, GET_USER_BY_ID, GET_ALL_FAV, GET_PRODUCTOS, GET_PRODUCT_BY_ID, GET_CATEGORIES,
     MERCADO_PAGO, POST_COMPRA, GET_COMPRAS, GET_COMPRAS_USER, GET_COMPRA_DETALLE, GET_CARRITO_USER, 
-    GET_USER_ADDRESS, FILTRA_MENU, RESET, GET_CATEGORY_BY_ID, GET_PROD_BY_NAME, FILTRA_AZ_ZA, FILTRA_PRICE, FILTRA_CAT, GET_COMPRAS_USER_BY_NAME, RESET_COMPRAS, GET_VENTAS_POR_DIA, VENTAS_POR_MES, LOGIN_GOOGLE, 
+    GET_USER_ADDRESS, FILTRA_MENU, RESET, GET_CATEGORY_BY_ID, GET_PROD_BY_NAME, FILTRA_AZ_ZA, FILTRA_PRICE, FILTRA_CAT, GET_COMPRAS_USER_BY_NAME, RESET_COMPRAS, GET_VENTAS_POR_DIA, VENTAS_POR_MES, 
 } from "./Actions/actionsType";
 
 const initialState = {
@@ -38,13 +38,6 @@ export default function rootReducer(state = initialState, action){
             return{
                 ...state,
                 logged: resp
-            }
-        case LOGIN_GOOGLE:
-            let resp_G;
-            if(action.payload === "ok"){resp_G = true}
-                return{
-                    ...state,
-                    logged: resp_G
             }
         case GET_USERS:
             return{

@@ -24,16 +24,16 @@ function ListaProducts() {
         dispatch(getProductos());
     }, [dispatch, allProd]);
 
-    return (
+  return (
     <>
-        <Navbar/>
-        <div className="cont-gral-prods">
+      <Navbar/>
+      <div className="cont-gral-prods">
         {/* loading */}
         {
             load === "true" ?
             (
                 <div>
-                    <Loading/>
+                   <Loading/>
                 </div>
             ) 
             : 
@@ -58,21 +58,21 @@ function ListaProducts() {
                             </div>
                         )
                     }
-            
+                   
                 </div>
             )
         }
         {/* btn whatsapp SOLO para clientes*/}
         {
-            userLog?.user.role === 'cliente' &&
-            <a href={url}><img src={imagWhatsApp} className={"whatsapp"} alt='not found'/></a>
+          userLog?.user.role === 'cliente' &&
+          <a href={url}><img src={imagWhatsApp} className={"whatsapp"} /></a>
         }
         
 
     </div>
     </>
     
-    )
+  )
 }
 
 export default ListaProducts

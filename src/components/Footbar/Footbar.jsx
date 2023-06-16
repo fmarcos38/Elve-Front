@@ -2,6 +2,7 @@ import React from 'react';
 import {Instagram} from '@mui/icons-material';
 import { WhatsApp } from '@mui/icons-material';
 import './footbar.css';
+import { Link } from 'react-router-dom';
 
 function Footbar() {
 
