@@ -91,6 +91,12 @@ export default function Navbar() {
                         Promos
                       </Button>
                     </Link> 
+                    {/* Muestra ,mapa de entrega */}
+                    <a style={{ textDecoration: "none" }} href="https://www.google.com/maps/d/viewer?mid=1Bks89QtLZEh5_hxGTd6WGYqk8ZoHEw4&ll=-38.016301091074226%2C-57.54370355&z=16">
+                      <Button onClick={handleCloseNavMenu} className={styles.btnNavbar} sx={{ my: 2, color: "black", display: "block" }}>
+                        Zona de entraga
+                      </Button>
+                    </a>
                 </Box>
 
                 {/* icono/btn menu pant chica */}
@@ -122,6 +128,14 @@ export default function Navbar() {
                           <Link to="/listaProdsOferta" style={{ textDecoration: "none" }}>
                             <Button textalign="center">Promos</Button>
                           </Link>
+                        </MenuItem>
+
+                        <MenuItem>
+                          <a style={{ textDecoration: "none" }} href="https://www.google.com/maps/d/viewer?mid=1Bks89QtLZEh5_hxGTd6WGYqk8ZoHEw4&ll=-38.016301091074226%2C-57.54370355&z=16">
+                            <Button onClick={handleCloseNavMenu} className={styles.btnNavbar} sx={{ my: 2, color: "black", display: "block" }}>
+                              Zona de entraga
+                            </Button>
+                          </a>
                         </MenuItem>
                         
                     </Menu>
@@ -190,8 +204,8 @@ export default function Navbar() {
                       </Link>
                     )
                 }
-           </Toolbar>
-       </Container>
+          </Toolbar>
+      </Container>
     </div>
     )
 }
