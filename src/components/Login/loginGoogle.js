@@ -37,6 +37,7 @@ function LoginGoogle() {
 
     //creacion de funciones segun resp del back
     const responseGoogle = (resp) =>{        
+        console.log("data: ", resp)
         //busco user
         let buscoUser = users.find(u => u.email === resp.profileObj.email);
 
