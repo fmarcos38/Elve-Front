@@ -10,7 +10,7 @@ import {getUsers, login} from "../../redux/Actions";
 import styles from './styles.module.css';
 import {useSelector} from 'react-redux';
 import { useEffect } from 'react';
-import LoginGoogle from './loginGoogle2';
+/* import LoginGoogle from './loginGoogle2'; */
 
 function Login() {
   
@@ -91,7 +91,7 @@ function Login() {
       <div className={styles.or}>──────────OR──────────</div>
 
       {/* login with google */}
-      <LoginGoogle/> 
+      {/* <LoginGoogle/>  */}
 
       <p className={styles.pMensaje}>¿No tienes una cuenta?</p>
       

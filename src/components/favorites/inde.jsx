@@ -63,7 +63,7 @@ function Favorites() {
                 favUser?.map(prod => 
                     <tbody key={prod._id} className='tableBodyF'>
                         <tr>
-                            <td><img className='cardImg' src={prod.imagen} alt='image not found'/></td>
+                            <td><img className='cardImg' src={prod.imagen} alt='img not found'/></td>
                             <td>${prod.precioP}.00</td>
                             {
                                 prod.priceCH > 0 ?
