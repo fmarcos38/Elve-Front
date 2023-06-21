@@ -1,12 +1,26 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import gif from '../../imagenes/gifCafe2.gif';
 import img1 from '../../imagenes/chapitas.jpg';
 import Navbar from '../Navbar';
 import Footbar from '../Footbar/Footbar';
+import { getProductos, getCategories, getUserById } from '../../redux/Actions';
+import authService from '../../localStorage/service';
 
 export default function LandingPage() {
+
+  const userLog = authService.getUserActual();
+  const dispatch = useDispatch();
+
+  useEffect(()=>{     
+    if(userLog){
+      dispatch(getUserById(userLog.user._id)); 
+    } 
+    dispatch(getProductos());
+    dispatch(getCategories());        
+  },[dispatch, userLog]);
 
   return (
     <>

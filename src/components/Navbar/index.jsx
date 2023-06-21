@@ -4,7 +4,7 @@ import userLog from "../../localStorage/service";
 import NavbarAdmin from "../NavbarAdmin";
 import logo from "../../imagenes/logo.jpg";
 import { Link, useNavigate } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import store from "../../localStorage/service";
 
 //--material--
@@ -22,24 +22,28 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
 import NoiseControlOffIcon from '@mui/icons-material/NoiseControlOff';
+import { getUserById } from '../../redux/Actions';
 //-----------
 
 export default function Navbar() {
     
     const [userActual, setUserActual] = useState();//estado para actualizar user log
+    //console.log("userLog: ", userActual.user);
     const [anchorElNav, setAnchorElNav] = useState(null);
     const [anchorElUser, setAnchorElUser] = useState(null);
 
     const cart = useSelector((state) => state.cart);
     const navigate = useNavigate(); 
+    const dispatch = useDispatch();
 
     //actualizo user logueado
     useEffect(()=>{
       const userLog = store.getUserActual(); 
       if(userLog){
         setUserActual(userLog);
+        dispatch(getUserById(userLog.user._id));
       }
-    },[]);
+    },[dispatch]);
     
     //--para manejo de menues
     const handleOpenNavMenu = (event) => {

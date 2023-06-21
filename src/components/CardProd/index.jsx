@@ -15,26 +15,27 @@ import EditIcon from '@mui/icons-material/Edit';
 import AddIcon from "@mui/icons-material/Add";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import authService from '../../localStorage/service';
+import { SaveFav } from '../../localStorage';
 
 
 function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, category}) {
 
+  const user = useSelector(state => state.user);
     //tengo la info q viene del back del user logueado
-    let store = JSON.parse(localStorage.getItem("user")); 
+    let store = authService.getUserActual(); console.log("dataUser: ", store);
     //estado local para manejar el array de fav
-    const [favStorage, setFavStorage] = useState([]);
+    const [favStorage, setFavStorage] = useState(user.favorites);
     //estodo para la cant pedida
     const [cantPedida, setCantPedida] = useState(1);
     //estado para el precio Segun tamaño prod elegido
     const [precio, setPrecio] = useState(priceG);
 
-    const allC = useSelector(state => state.categories);
-
     const cart = useSelector((state) => state.cart);  
     const navigate = useNavigate();  
     const dispatch = useDispatch(); 
 
-    useEffect(() => {
+    /* useEffect(() => {
         if (!store) {
           dispatch(getProductos()); 
           dispatch(getCategories());    
@@ -44,7 +45,7 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
           dispatch(getCarritoUser(store.user._id));
           dispatch(getAllFavs(store.user._id));
         }
-    }, [dispatch,getAllFavs]);
+    }, [dispatch,getAllFavs]); */
     
     const handleSuma = (e) => {
         //no hay stock
@@ -111,8 +112,9 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
           navigate("/registrarse");
             
         }else{  
-          if (!localStorage.getItem("favorites")?.includes(_id)) {//si el producto NO esta en fav del localStor
-            store.user && dispatch(addFavorites({
+          if (!favStorage.find(e => e._id === _id)) {//si el producto NO esta en fav del localStor
+            store.user && 
+            dispatch(addFavorites({
               idP:_id, 
               imagenP: imagen,
               nameP: name,
@@ -122,12 +124,10 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
               idU: store.user._id
             })); 
             //asigno a state el erray de fav q está en el localStor
-            let state = JSON.parse(localStorage.getItem("favorites"));
-    
-            if (state === null) state = [_id];
-            else state.push(_id);//carga array
+            let state = store.user.favorites;
+            state.push(_id);//carga array
             //guarda el nuevo array en fav del localStor
-            localStorage.setItem("favorites", JSON.stringify(state)); 
+            SaveFav(state);
             setFavStorage(state);      
             swal({
               title: "Producto Añadido",
@@ -135,15 +135,15 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
               icon: "success",
               button: "Aceptar",
             });        
-          }else{            
-            dispatch(deleteFav({idP:_id, idU:store.user._id}));
+          }
+          if (favStorage.find(e => e._id === _id)){            
+            dispatch(deleteFav({idP:_id, idU:store.user._id})); //borro de la DB
             //asigno a state el erray de fav q está en el localStor
-            let state = JSON.parse(localStorage.getItem("favorites"));
-            state = state.filter((fav) => fav !== _id);
-            //guarda el nuevo array en fav del localStor
-            localStorage.setItem("favorites", JSON.stringify(state));
-    
-            setFavStorage(state);
+            let newState = store.user.favorites;
+            newState = newState.filter((fav) => fav._id !== _id);
+             //guarda el nuevo array en fav del localStor
+            SaveFav(newState);
+            setFavStorage(newState); 
             swal({
               title: "Prod Eliminado",
               text: `${name} eliminado de Favoritos`,
@@ -260,12 +260,12 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
         <AddShoppingCartIcon disable onClick={() => handleClickShopping(_id)} className={"cardButton"} />          
 
         {/* btn-fav */}
-        <div >
+        <div>
           {
-            !store ? 
+            !store ?
             <FavoriteBorderIcon className={"cardButton"} onClick={() => handleFavs(_id)}/>
             :
-            <FavoriteBorderIcon className={favStorage.includes(_id) ? "cardButtonFav" : "cardButton"} onClick={() => handleFavs(_id)} />  
+            <FavoriteBorderIcon className={favStorage.find(e => e._id === _id) ? "cardButtonFav" : "cardButton"} onClick={() => handleFavs(_id)} />  
           }          
         </div>
 

@@ -1,9 +1,10 @@
 import React, {useEffect}from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
-import { getProductos, filtraMenu, getCategories } from '../../redux/Actions';
+import { filtraMenu, getUserById } from '../../redux/Actions';
 import Navbar from '../Navbar';
 import style from './styles.module.css'
+
 
 export default function Home() {
 
@@ -16,10 +17,7 @@ export default function Home() {
   const salado = allC.find(c => c.name === "Salado");
   const deco = allC.find(c => c.name === "Decoración");  
 
-  useEffect(()=>{
-    dispatch(getProductos());
-    dispatch(getCategories());
-  }, [dispatch]);
+
   
   return (
     <>

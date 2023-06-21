@@ -6,7 +6,7 @@ import DivContainer from "../../styledComponents/DivConteiner";
 import InputComp from '../FormElements/Input';
 import {regExp} from '../FormElements/regExp';
 import Swal from "sweetalert2";
-import {getUsers, login} from "../../redux/Actions";
+import {getUserById, getUsers, login} from "../../redux/Actions";
 import styles from './styles.module.css';
 import {useSelector} from 'react-redux';
 import { useEffect } from 'react';
@@ -40,7 +40,8 @@ function Login() {
         Swal.fire('Cuenta sin validar, revisa tu email!!')
       }else{
         if (email.valid === 'true' && password.valid === 'true') {
-          dispatch(login({ email: email.key, password: password.key }))
+          dispatch(login({ email: email.key, password: password.key }));
+          dispatch(getUserById(buscoUser._id));
           //traer carrito user log
           Swal.fire('Log exitoso.');
           navigate('/home');

@@ -1,6 +1,6 @@
 import React, {useEffect}from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductos } from '../../redux/Actions';
+import { getProductos, getUserById } from '../../redux/Actions';
 import './Products.css';
 import Navbar from '../Navbar';
 import CardProd from '../CardProd';
