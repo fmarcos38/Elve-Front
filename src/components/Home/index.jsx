@@ -1,14 +1,15 @@
 import React, {useEffect}from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
-import { filtraMenu, getUserById } from '../../redux/Actions';
+import { filtraMenu, getCategories, getProductos, getUserById } from '../../redux/Actions';
 import Navbar from '../Navbar';
 import style from './styles.module.css'
+import authService from '../../localStorage/service';
 
 
 export default function Home() {
 
-  
+  const userLog = authService.getUserActual();
   const dispatch = useDispatch();
   const allC = useSelector(state => state.categories);
   const bebidaC = allC.find(c => c.name === "Bebidas Calientes");
@@ -17,14 +18,18 @@ export default function Home() {
   const salado = allC.find(c => c.name === "Salado");
   const deco = allC.find(c => c.name === "Decoración");  
 
-
+  useEffect(()=>{    
+    if(userLog){ dispatch(getUserById(userLog.user._id));}
+    dispatch(getProductos());
+    dispatch(getCategories());
+  },[dispatch, userLog]);
   
   return (
     <>
       <Navbar/>
       <div className={style.container}>
       <div className={style.contListaP2}>
-     
+    
       {/* bebidas calientes */}
       <Link to={'/listaProds'} onClick={()=>dispatch(filtraMenu(bebidaC.name))}>
         <div className={style.card}>

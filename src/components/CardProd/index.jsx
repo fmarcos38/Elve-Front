@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import  './cardProd.css';
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-    addFavorites, getAllFavs, deleteFav, getCarritoUser,  setShoppingCar, getProductos, getCategories, elimProd, 
+    addFavorites, deleteFav, getCarritoUser,  setShoppingCar, elimProd, 
   } from "../../redux/Actions";
 import swal from "sweetalert";
 
@@ -23,7 +23,7 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
 
   const user = useSelector(state => state.user);
     //tengo la info q viene del back del user logueado
-    let store = authService.getUserActual(); console.log("dataUser: ", store);
+    let store = authService.getUserActual(); //console.log("dataUser: ", store);
     //estado local para manejar el array de fav
     const [favStorage, setFavStorage] = useState(user.favorites);
     //estodo para la cant pedida
@@ -195,7 +195,7 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
         <div className="div-precio">
           {/* Precio para bebidas */}          
           <label className="lab-prcio">
-            <input id="radio1" type="radio" value={priceG} checked={precio == priceG ? true : false}
+            <input id="radio1" type="radio" value={priceG} checked={precio === priceG ? true : false}
               onChange={handleRadioB}
             />
             Precio T. Grande 340ml(12oz): ${priceG}          
@@ -205,7 +205,7 @@ function CardProd({ _id, name, description, priceG, priceCH, imagen, discount, c
             <>
             <br></br>
             <label className="lab-prcio">          
-            <input id="radio2" type="radio" value={priceCH} checked={precio == priceCH ? true : false}
+            <input id="radio2" type="radio" value={priceCH} checked={precio === priceCH ? true : false}
               onChange={handleRadioB} 
             />
               Precio T. Chico 225ml(8oz): ${priceCH}
